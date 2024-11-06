@@ -121,9 +121,7 @@ watch(selectedMonth, (newValue, oldValue) => {
   monthAllDays.value = getAllDaysInMonth(newValue);
 });
 onMounted(() => {
-  console.log(selectedMonth.value);
   monthAllDays.value = getAllDaysInMonth(selectedMonth.value);
-  console.log(monthAllDays.value);
 });
 </script>
 
