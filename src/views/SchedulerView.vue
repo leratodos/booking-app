@@ -123,6 +123,17 @@ watch(selectedMonth, (newValue, oldValue) => {
 onMounted(() => {
   monthAllDays.value = getAllDaysInMonth(selectedMonth.value);
 });
+
+defineExpose({
+  getCellClass,
+  getDateOfWeek,
+  getDayOfWeek,
+  isDateInRange,
+  getDaysDifference,
+  isToday,
+  isHoliday,
+  isFirstOrLastDayInEvent,
+});
 </script>
 
 <template>
