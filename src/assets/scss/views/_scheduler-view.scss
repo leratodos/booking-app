@@ -134,14 +134,21 @@
     width: 110%;
     height: 40px;
     padding: 10px;
-    background-color: #1e133d;
+    background-color: #211c46;
     transform: translate(-50%, -50%);
   }
 
   .first-date .event-marker {
     width: 100%;
-    left: 60%;
+    left: 95%;
+    background-color: #211c46;
     border-radius: 4px;
+  }
+  .last-date .event-marker {
+    width: 100%;
+    left: -10%;
+    border-radius: 4px;
+    background-color: #211c46;
   }
 
   .guest-name {
@@ -152,23 +159,17 @@
     white-space: nowrap;
     font-weight: bold;
     transform: translateY(-50%);
-    padding-left: 15px;
+    padding-left: 45px;
     z-index: 20;
-    max-width: 150px;
+    max-width: 115px;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .full-guest-name {
+    max-width: 200px;
   }
   .first-date .guest-name {
     display: block;
   }
-  .last-date .event-marker {
-    width: 100%;
-    left: 40%;
-    border-radius: 4px;
-  }
 
-  .last-date.first-date .event-marker {
-    width: 90%;
-    left: 50%;
-  }
 }
