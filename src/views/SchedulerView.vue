@@ -77,12 +77,6 @@ const isDateInRange = (start: string, end: string, day: Date): boolean => {
   const dayDate = new Date(day).getTime();
   return dayDate >= startDate && dayDate <= endDate;
 };
-const getCellClass = (day: Date): { holiday: boolean; today: boolean } => {
-  return {
-    holiday: isHoliday(day),
-    today: isToday(day),
-  };
-};
 const getDaysDifference = (start: string, end: string): number => {
   const startDate = new Date(start);
   const endDate = new Date(end);
@@ -128,7 +122,6 @@ onMounted(() => {
 });
 
 defineExpose({
-  getCellClass,
   getDateOfWeek,
   getDayOfWeek,
   isDateInRange,
@@ -168,7 +161,7 @@ defineExpose({
           <div
             v-for="day in monthAllDays"
             class="week-day"
-            :class="getCellClass(day)"
+            :class="[isHoliday(day) ? 'holiday' : '', isToday(day) ? 'today' : '']"
           >
             <h6>{{ getDateOfWeek(day) }}</h6>
             <span>{{ getDayOfWeek(day) }}</span>
@@ -178,7 +171,7 @@ defineExpose({
           <div
             v-for="day in monthAllDays"
             class="main-row-cell"
-            :class="[getCellClass(day)]"
+            :class="[isHoliday(day) ? 'holiday' : '', isToday(day) ? 'today' : '']"
           >
             <div v-for="item in el.booking_schedule">
               <template

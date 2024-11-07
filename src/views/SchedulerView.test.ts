@@ -1,6 +1,6 @@
+import { describe, it, expect, beforeEach } from "vitest";
 import { mount, VueWrapper } from "@vue/test-utils";
 import SchedulerView from "./SchedulerView.vue";
-import { describe, it, expect, beforeEach } from "vitest";
 
 describe("SchedulerView", () => {
   let wrapper: VueWrapper<InstanceType<typeof SchedulerView>>;
