@@ -3,7 +3,10 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   test: {
-    environment: 'happy-dom', // або jsdom, залежно від вашого вибору
+    environment: 'happy-dom',
+    coverage: {
+      provider: 'istanbul'
+    },
   },
   plugins: [vue()],
 });

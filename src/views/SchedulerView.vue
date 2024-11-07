@@ -91,6 +91,9 @@ const getDaysDifference = (start: string, end: string): number => {
   );
 };
 const isToday = (day: Date): boolean => {
+  if (isNaN(day.getTime())) {
+    return false;
+  }
   const today = new Date();
   return day.toDateString() === today.toDateString();
 };
