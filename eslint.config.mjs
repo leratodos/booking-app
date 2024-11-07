@@ -4,7 +4,7 @@ import "@rushstack/eslint-patch/modern-module-resolution";
 export default {
   root: true,
   env: {
-    node: true, // Enable Node.js globals
+    node: true,
   },
   extends: [
     'plugin:vue/vue3-recommended',
